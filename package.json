@@ -1,0 +1,24 @@
+{
+  "name": "emv-translate-service",
+  "version": "1.0.0",
+  "description": "a backend service used to convert json to emv and vice versa",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "json",
+    "emv",
+    "convert"
+  ],
+  "author": "jiro quijano",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.1",
+    "supertest": "^5.0.0"
+  }
+}
