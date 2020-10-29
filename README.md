@@ -42,6 +42,18 @@
 //invalidKeys - array of keys from request body which were invalid
 {
     EMVCode: '00020101021128500011pa.hil.pi020111PBTMNPHIXXX030989230765305031235204601653036085802PH5910MYFOODHALL6011MANDALUYONG624105253CF64D20941AAEFCE8C263A7A0708000000006304D458',
+    invalidKeys = []
+}
+```
+----
+### If *jsoninput* is correct but contains extra invalid keys (which will be excluded in the conversion)
+##### Status Code - `200`
+##### Body
+```javascript
+//EMVCode - string output of POST - /json2emv
+//invalidKeys - array of keys from request body which were invalid
+{
+    EMVCode: '00020101021128500011pa.hil.pi020111PBTMNPHIXXX030989230765305031235204601653036085802PH5910MYFOODHALL6011MANDALUYONG624105253CF64D20941AAEFCE8C263A7A0708000000006304D458',
     invalidKeys = ['what', 'are', 'thooooseee']
 }
 ```
