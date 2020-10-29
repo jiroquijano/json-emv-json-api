@@ -38,7 +38,7 @@ const convertObjectToArray = (input)=>{ //transform object to array to guarantee
                         innerArray.push([innerKey, input[key][innerKey]]);
                     }
                 });
-                resultingArray.push([key, innerArray])
+                resultingArray.push([key, innerArray]);
             }else{
                 resultingArray.push([key,input[key]]);
             }
@@ -49,11 +49,12 @@ const convertObjectToArray = (input)=>{ //transform object to array to guarantee
 
 const convertObjectToEMVCode = (input) =>{
     if(_.isEmpty(input)) return '';
+    let crcString = '';
     const inputArray = convertObjectToArray(input); //to guarantee input field order (this is crucial for crc), transform object to array
     const emvString = inputArray.reduce((acc, curr)=>{
         return `${acc}${transformToEMVFormat(curr[0],curr[1])}`
     },'');
-    const crcString = calculateAndFormatCRC(emvString);
+    if(emvString) crcString = calculateAndFormatCRC(emvString);
     return emvString+crcString;
 }
 
