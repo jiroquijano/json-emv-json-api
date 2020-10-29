@@ -1,5 +1,3 @@
-# JSON <-> EMV API
->a service providing API endpoints to convert JSON to EMV and vice versa
 # JSON to EMV API endpoint `/json2emv`
 >#### Converts JSON input to EMV String
 
