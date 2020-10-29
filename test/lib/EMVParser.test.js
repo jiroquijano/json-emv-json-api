@@ -1,4 +1,4 @@
-const {EMVParser} = require('./EMVParser');
+const {EMVParser} = require('../../src/lib/EMVParser');
 
 test('simple EMV strings should be converted to objects properly',()=>{
     const simpleEMV = '0004simp';
@@ -50,7 +50,7 @@ test('parser should be able to handle multiple complex nested EMV string', ()=>{
 })
 
 test('parser should be able to process a combination of simple and complex EMV string',()=>{
-    const combinedEMV = '00020101021128500011pa.hil.pi020111PBTMNPHIXXX030989230765305031235204601653036085802PH5910MYFOODHALL6011MANDALUYONG624105253CF64D20941AAEFCE8C263A7A070800000000630485A6';
+    const combinedEMV = '00020101021128500011pa.hil.pi020111PBTMNPHIXXX030989230765305031235204601653036085802PH5910MYFOODHALL6011MANDALUYONG624105253CF64D20941AAEFCE8C263A7A0708000000006304D458';
     const parserUnderTest = new EMVParser(combinedEMV);
     expect(parserUnderTest.getObjectEquivalent()).toEqual({
         pfi: '01',
@@ -70,7 +70,7 @@ test('parser should be able to process a combination of simple and complex EMV s
             refLabel: '3CF64D20941AAEFCE8C263A7A',
             termLabel: '00000000'
         },
-        crc: '85A6'
+        crc: 'D458'
     });
 })
 

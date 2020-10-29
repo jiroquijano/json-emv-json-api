@@ -1,5 +1,5 @@
-const {transformToEMVFormat, convertObjectToEMVCode, calculateAndFormatCRC} = require('./json-emv-conv');
-const {keyToIDMap} = require('./key-and-id-mapping');
+const {transformToEMVFormat, convertObjectToEMVCode, calculateAndFormatCRC} = require('../../src/lib/json-emv-conv');
+const {keyToIDMap} = require('../../src/lib/key-and-id-mapping');
 const {crc16ccitt} = require('crc');
 const _ = require('lodash');
 
