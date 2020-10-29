@@ -1,4 +1,4 @@
-const {EMVParser} = require('../../src/lib/EMVParser');
+const EMVParser = require('../../src/lib/EMVParser');
 
 test('simple EMV strings should be converted to objects properly',()=>{
     const simpleEMV = '0004simp';

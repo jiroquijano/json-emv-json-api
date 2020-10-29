@@ -5,9 +5,10 @@ const {keyToIDMap} = require('../lib/key-and-id-mapping');
 const _ = require('lodash');
 
 router.post('/json2emv',(req,res)=>{
-    const requestKeys = Object.keys(req.body);
+    if(typeof(req.body.jsoninput) !== 'object') return res.status(400).send({error: 'malformed json input'});
+    const requestKeys = Object.keys(req.body.jsoninput);
     const invalidKeys = _.difference(requestKeys, Object.keys(keyToIDMap));
-    const EMVCode = convertObjectToEMVCode(req.body);
+    const EMVCode = convertObjectToEMVCode(req.body.jsoninput);
     res.send({
         EMVCode,
         invalidKeys
