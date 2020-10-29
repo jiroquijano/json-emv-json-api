@@ -30,24 +30,15 @@ const convertObjectToArray = (input)=>{ //transform object to array to guarantee
     const resultingArray = [];
     ['pfi','pim','mait','mcc','txCurrency','txAmt','cc','merName','merCity','additional'].forEach((key)=>{
         if(input[key]){
-            if(key === 'mait'){
+            if(key === 'mait' || key === 'additional'){
                 const innerArray = [];
-                ['guid','acqid','merid','pnflags'].forEach((innerKey)=>{
+                const validInnerKeys = key==='mait' ? ['guid','acqid','merid','pnflags'] : ['refLabel','termLabel']
+                validInnerKeys.forEach((innerKey)=>{
                     if(input[key][innerKey]){
                         innerArray.push([innerKey, input[key][innerKey]]);
                     }
                 });
                 resultingArray.push([key, innerArray])
-            }else if(key === 'additional'){
-                const innerArray = [];
-                ['refLabel','termLabel'].forEach((innerKey)=>{
-                    if(input[key][innerKey]){
-                        innerArray.push([innerKey, input[key][innerKey]]);
-                    }
-                });
-                resultingArray.push([key, innerArray]);
-            }else if(keyToIDMap[key] === undefined){
-                console.log('invalid key');
             }else{
                 resultingArray.push([key,input[key]]);
             }
