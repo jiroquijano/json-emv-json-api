@@ -86,8 +86,7 @@
 ### Response: `/emv2json`
 ----
 ### If *emvinput* provided in request body is valid
-##### Status Code
-`200`
+##### Status Code - `200`
 ##### Body
 ```javascript
 {
