@@ -11,7 +11,7 @@
 ```
 {
     pfi: <string[2]>,                 //[ID=00] Payload Format Indicator [Mandatory]
-    pim: <string[2]> O,               //[ID=01] Point of initiation method {11=static,12=dynamic} [Optional]
+    pim: <string[2]>,                 //[ID=01] Point of initiation method {11=static,12=dynamic} [Optional]
     mait: <object[0...99]>            //[ID=28] P2M Merchant Account information template [Optional]
     {    
         guid: <string[1...20]>,       //[ID=00] Globally Unique Identifier [Mandatory]
