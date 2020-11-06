@@ -10,25 +10,27 @@
 ##### Body
 ```
 {
-    pfi: <string[2]>,                 //[ID=00] Payload Format Indicator [Mandatory]
-    pim: <string[2]>,                 //[ID=01] Point of initiation method {11=static,12=dynamic} [Optional]
-    mait: <object[0...99]>            //[ID=28] P2M Merchant Account information template [Optional]
-    {    
-        guid: <string[1...20]>,       //[ID=00] Globally Unique Identifier [Mandatory]
-        acqid: <string[11]>,          //[ID=01] Acquirer ID [Mandatory]
-        merid: <string[1...25]>,      //[ID=03] Merchant ID [Conditional]
-        pnflags: <string[3]>          //[ID=05] Proxy notify flags [Mandatory]
-    },
-    mcc: <string[4]>,                 //[ID=52] Merchant Category Code [Mandatory]
-    txCurrency: <string[3]>,          //[ID=53] Transaction currency [Mandatory]
-    txAmt: <string[0...13]>,          //[ID=54] Transaction amount [Conditional]
-    cc: <string[2]>,                  //[ID=58] Country code [Mandatory]
-    merName: <string[1...25]>,        //[ID=59] Merchant name [Mandatory]
-    merCity: <string[1...15]>,        //[ID=60] Merchant city [Mandatory]
-    additional: <object[0...99]>      //[ID=62] Additional data field template [Optional]
-    {
-        refLabel: <string[1...25]>,   //[ID=05] Reference label [Mandatory]
-        termLabel: <string[1...8]>    //[ID=07] Terminal label [Conditional]
+    jsoninput: {
+        pfi: <string[2]>,                 //[ID=00] Payload Format Indicator [Mandatory]
+        pim: <string[2]>,                 //[ID=01] Point of initiation method {11=static,12=dynamic} [Optional]
+        mait: <object[0...99]>            //[ID=28] P2M Merchant Account information template [Optional]
+        {    
+            guid: <string[1...20]>,       //[ID=00] Globally Unique Identifier [Mandatory]
+            acqid: <string[11]>,          //[ID=01] Acquirer ID [Mandatory]
+            merid: <string[1...25]>,      //[ID=03] Merchant ID [Conditional]
+            pnflags: <string[3]>          //[ID=05] Proxy notify flags [Mandatory]
+        },
+        mcc: <string[4]>,                 //[ID=52] Merchant Category Code [Mandatory]
+        txCurrency: <string[3]>,          //[ID=53] Transaction currency [Mandatory]
+        txAmt: <string[0...13]>,          //[ID=54] Transaction amount [Conditional]
+        cc: <string[2]>,                  //[ID=58] Country code [Mandatory]
+        merName: <string[1...25]>,        //[ID=59] Merchant name [Mandatory]
+        merCity: <string[1...15]>,        //[ID=60] Merchant city [Mandatory]
+        additional: <object[0...99]>      //[ID=62] Additional data field template [Optional]
+        {
+            refLabel: <string[1...25]>,   //[ID=05] Reference label [Mandatory]
+            termLabel: <string[1...8]>    //[ID=07] Terminal label [Conditional]
+        }
     }
 }
 ```
